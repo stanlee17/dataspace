@@ -1,4 +1,40 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+  --black: #161616;
+  --white: #f4f4f4;
+}
+
+.container {
+  max-width: 80%;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.nav-links li:not(:last-child) {
+  margin-right: 3rem;
 }

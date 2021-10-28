@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
     <title>NASA</title>
   </head>
   <body>
-    <nav>
+    <nav id="nav">
       <div class="nav container">
         <a href="index.html" class="nav-logo">
           <img src="./images/logo.png" alt="dataspace-logo" />
@@ -27,8 +29,8 @@
         </ul>
       </div>
     </nav>
-    <div class="landing-page">
-      <div class="landing-page-heading">
+    <div id="landing-page">
+      <div class="landing-page-heading container">
         <h1>Welcome to DataSpace</h1>
         <h3>
           We provide a collection of information regarding space facts from the
@@ -37,7 +39,9 @@
         <a href="#" class="btn">Picture of the Day</a>
       </div>
     </div>
-    <section id="apod"></section>
+    <section id="apod">
+      <div class="container apod"></div>
+    </section>
 
     <script type="module" src="./js/index.js"></script>
   </body>

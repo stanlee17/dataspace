@@ -5,15 +5,39 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+  background-color: #f1f1f1;
+}
+
+/* Variables */
 :root {
   --black: #161616;
   --white: #f4f4f4;
 }
 
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* Utilities */
+
 .container {
   max-width: 80%;
   margin: auto;
 }
+
+.btn {
+  background-color: #5233d1;
+  display: inline-block;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--white);
+  padding: 1rem 1.5rem;
+}
+
+/* Navigation */
 
 .nav {
   display: flex;
@@ -26,15 +50,50 @@
   align-items: center;
 }
 
-.nav-links li {
-  list-style: none;
-}
-
 .nav-link {
-  text-decoration: none;
   color: var(--black);
 }
 
 .nav-links li:not(:last-child) {
   margin-right: 3rem;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+/* Landing Page */
+
+.landing-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/images/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  min-height: 85vh;
+}
+
+.landing-page-heading {
+  text-align: center;
+  color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.landing-page-heading h1 {
+  font-size: 2.3rem;
+}
+
+.landing-page-heading h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #eeeeee;
+}
+
+.landing-page-heading *:not(:last-child) {
+  padding-bottom: 1.5rem;
 }

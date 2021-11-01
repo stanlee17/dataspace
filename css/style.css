@@ -102,7 +102,7 @@ p {
 
 /* APOD */
 .apod {
-  padding: 5rem 0;
+  padding: 10rem 0;
 }
 
 .apod-heading {
@@ -133,4 +133,19 @@ p {
 
 .apod-explanation {
   line-height: 2;
+}
+
+/* What's ISS */
+.whats-iss {
+  display: flex;
+  align-items: center;
+}
+
+.whats-iss-content {
+  padding-right: 3rem;
+  line-height: 2;
+}
+
+.whats-iss-image {
+  min-width: 45%;
 }

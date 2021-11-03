@@ -102,7 +102,7 @@ p {
 
 /* APOD */
 .apod {
-  padding: 10rem 0;
+  padding: 7rem 0;
 }
 
 .apod-heading {
@@ -139,6 +139,7 @@ p {
 .whats-iss {
   display: flex;
   align-items: center;
+  padding: 7rem 0;
 }
 
 .whats-iss-content {
@@ -148,4 +149,18 @@ p {
 
 .whats-iss-image {
   min-width: 45%;
+}
+
+/* Realtime ISS Location */
+.realtime-iss {
+  padding: 7rem 0;
+}
+
+.realtime-iss-heading {
+  text-align: center;
+  padding-bottom: 2.5rem;
+}
+
+#map {
+  height: 500px;
 }

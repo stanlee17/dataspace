@@ -26,7 +26,9 @@ export default class APOD {
       <img class="apod-image" src="${this.imageUrl}" alt="${this.title}">
       <div class="apod-content">
         <h1 class="apod-title">${this.title}</h1>
-        <h3 class="apod-copyright">By ${this.copyright}</h3>
+        <h3 class="apod-copyright">${
+          this.copyright ? `By ${this.copyright}` : ''
+        }</h3>
         <p class="apod-explanation">${this.explanation}</p>
       </div>
     </div>

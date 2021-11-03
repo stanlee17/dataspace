@@ -1,9 +1,9 @@
 export default class Search {
   async getData() {
     try {
-      let res = await fetch(`https://images-api.nasa.gov/search?q=venus`);
-      res = await res.json();
-      console.log(res);
+      const result = await fetch(`https://images-api.nasa.gov/search?q=venus`);
+      const data = await result.json();
+      console.log(data);
     } catch (err) {
       return err;
     }

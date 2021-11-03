@@ -1,16 +1,16 @@
 export default class APOD {
   async getData() {
     try {
-      let res = await fetch(
+      const result = await fetch(
         `https://api.nasa.gov/planetary/apod?api_key=ZnfBKm3UIHE7QMuadjbpbXSmghb5PSeYoI3lUEUi`
       );
-      res = await res.json();
+      const data = await result.json();
 
-      this.copyright = res.copyright;
-      this.title = res.title;
-      this.date = res.date;
-      this.explanation = res.explanation;
-      this.imageUrl = res.url;
+      this.copyright = data.copyright;
+      this.title = data.title;
+      this.date = data.date;
+      this.explanation = data.explanation;
+      this.imageUrl = data.url;
 
       this.displayData();
     } catch (err) {

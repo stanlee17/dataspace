@@ -36,6 +36,7 @@ p {
 
 .btn {
   background-color: #5233d1;
+  border: none;
   display: inline-block;
   font-weight: 500;
   font-size: 1.2rem;

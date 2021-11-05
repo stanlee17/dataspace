@@ -30,9 +30,23 @@ const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
 async function getISS() {
   const res = await fetch(`https://api.wheretheiss.at/v1/satellites/25544`);
   const data = await res.json();
-  console.log(data.latitude, data.longitude);
-  marker.setLatLng([data.latitude, data.longitude]);
+  const { latitude, longitude, velocity, visibility } = data;
+
+  console.log(data);
+
+  marker.setLatLng([latitude, longitude]);
+
+  marker
+    .bindPopup(
+      `Latitude: ${latitude} <br /> Longitude: ${longitude} <br /> Velocity: ${Math.round(
+        velocity
+      )} km`
+    )
+    .openPopup();
+
+  console.log(latitude, longitude);
 }
 
 getISS();
+
 setInterval(getISS, 1000);

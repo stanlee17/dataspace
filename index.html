@@ -19,7 +19,7 @@
       crossorigin=""
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>NASA</title>
+    <title>DataSpace | Home</title>
   </head>
   <body>
     <nav id="nav">
@@ -35,7 +35,6 @@
         </ul>
       </div>
     </nav>
-
     <div id="landing-page">
       <div class="container landing-page-heading">
         <h1>Welcome to DataSpace</h1>
@@ -46,11 +45,9 @@
         <a href="#" class="btn">Picture of the Day</a>
       </div>
     </div>
-
     <section id="apod">
       <div class="container apod"></div>
     </section>
-
     <section id="whats-iss">
       <div class="container whats-iss">
         <div class="whats-iss-content">
@@ -71,17 +68,15 @@
         <img class="whats-iss-image" src="./images/iss.png" alt="iss-img" />
       </div>
     </section>
-
     <section id="realtime-iss">
       <div class="container realtime-iss">
         <h1 class="realtime-iss-heading">Real-time ISS Location</h1>
         <div id="issMap"></div>
       </div>
     </section>
-
     <section id="latest-mars">
-      <div class="container">
-        <div class="latest-mars">
+      <div class="container latest-mars">
+        <div class="latest-mars-text">
           <h1>Latest Mars Photos</h1>
           <p>
             Get the latest Mars images taken by the NASA here. Select which
@@ -90,25 +85,19 @@
           </p>
         </div>
         <div class="latest-mars-rovers">
-          <ul class="latest-mars-options">
-            <li class="latest-mars-curiosity" data-option="curiosity">
-              Curiosity
-            </li>
-            <li class="latest-mars-spirit" data-option="spirit">Spirit</li>
-            <li class="latest-mars-opportunity" data-option="opportunity">
-              Opportunity
-            </li>
-            <li class="latest-mars-perseverance" data-option="perseverance">
-              Perseverance
-            </li>
+          <ul>
+            <li class="btn-option active" data-option="curiosity">Curiosity</li>
+            <li class="btn-option" data-option="spirit">Spirit</li>
+            <li class="btn-option" data-option="opportunity">Opportunity</li>
+            <li class="btn-option" data-option="perseverance">Perseverance</li>
           </ul>
           <!-- Rover Image here -->
+          <img id="rover-image" src="" alt="" />
 
           <button class="btn">Show me another</button>
         </div>
       </div>
     </section>
-
     <script
       src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="

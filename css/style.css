@@ -12,6 +12,7 @@ body {
 /* Variables */
 :root {
   --black: #161616;
+  --orange: #c7722c;
   --white: #f4f4f4;
 }
 
@@ -39,10 +40,25 @@ p {
   border: none;
   display: inline-block;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-radius: 4px;
   color: var(--white);
   padding: 1rem 1.5rem;
+}
+
+.btn-option {
+  color: var(--orange);
+  border: var(--orange) 1px solid;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  transition: 0.3s;
+}
+
+.btn-option:hover {
+  color: var(--white);
+  background-color: var(--orange);
 }
 
 /* Navigation */
@@ -164,4 +180,27 @@ p {
 
 #issMap {
   height: 500px;
+}
+
+/* Latest Mars Photos */
+.latest-mars {
+  text-align: center;
+}
+
+.latest-mars-text {
+  line-height: 2;
+}
+
+.latest-mars-rovers * {
+  margin: 0.5rem 0;
+}
+
+.latest-mars-rovers ul li:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.latest-mars-rovers ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
 }

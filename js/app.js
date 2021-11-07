@@ -1,22 +1,23 @@
 const apod = document.querySelector('.apod');
+const roversOption = document.querySelectorAll('.latest-rovers ul li');
 
 class App {
   #marker;
 
   constructor() {
-    this.getAPOD();
-    this.loadMap();
-    this.getISS();
-    setInterval(this.getISS.bind(this), 1000);
+    this._getAPOD();
+    this._loadMap();
+    this._getISS();
+    setInterval(this._getISS.bind(this), 1000);
+    this._roversOptionHandler();
   }
 
-  async getAPOD() {
+  async _getAPOD() {
     try {
       const result = await fetch(
         `https://api.nasa.gov/planetary/apod?api_key=ZnfBKm3UIHE7QMuadjbpbXSmghb5PSeYoI3lUEUi`
       );
       const data = await result.json();
-      console.log(data);
 
       this.copyright = data.copyright;
       this.title = data.title;
@@ -24,13 +25,29 @@ class App {
       this.explanation = data.explanation;
       this.imageUrl = data.url;
 
-      this.displayAPOD();
+      this._displayAPOD();
     } catch (err) {
       return err;
     }
   }
 
-  displayAPOD() {
+  async _getISS() {
+    const res = await fetch(`https://api.wheretheiss.at/v1/satellites/25544`);
+    const data = await res.json();
+    const { latitude, longitude, velocity } = data;
+
+    this.#marker.setLatLng([latitude, longitude]);
+
+    this.#marker
+      .bindPopup(
+        `Latitude: ${latitude} <br /> Longitude: ${longitude} <br /> Velocity: ${Math.round(
+          velocity
+        )} km`
+      )
+      .openPopup();
+  }
+
+  _displayAPOD() {
     apod.innerHTML = `
     <h1 class="apod-heading">Picture of the Day</h1>
     <div class="apod-wrapper">
@@ -46,7 +63,7 @@ class App {
     `;
   }
 
-  loadMap() {
+  _loadMap() {
     const mymap = L.map('issMap').setView([0, 0], 2);
     const attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -64,21 +81,19 @@ class App {
     this.#marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
   }
 
-  async getISS() {
-    const res = await fetch(`https://api.wheretheiss.at/v1/satellites/25544`);
-    const data = await res.json();
-    const { latitude, longitude, velocity } = data;
+  _roversOptionHandler() {
+    roversOption.forEach((rover) => {
+      rover.addEventListener('click', () => {
+        roversOption.forEach((rover) => {
+          rover.classList.remove('active');
+        });
 
-    this.#marker.setLatLng([latitude, longitude]);
-
-    this.#marker
-      .bindPopup(
-        `Latitude: ${latitude} <br /> Longitude: ${longitude} <br /> Velocity: ${Math.round(
-          velocity
-        )} km`
-      )
-      .openPopup();
+        rover.classList.add('active');
+      });
+    });
   }
+
+  _roversOption() {}
 }
 
 const app = new App();

@@ -56,7 +56,8 @@ p {
   transition: 0.3s;
 }
 
-.btn-option:hover {
+.btn-option:hover,
+.active {
   color: var(--white);
   background-color: var(--orange);
 }
@@ -179,7 +180,7 @@ p {
 }
 
 #issMap {
-  height: 500px;
+  min-height: 500px;
 }
 
 /* Latest Mars Photos */
@@ -191,15 +192,15 @@ p {
   line-height: 2;
 }
 
-.latest-mars-rovers * {
+.latest-rovers * {
   margin: 0.5rem 0;
 }
 
-.latest-mars-rovers ul li:not(:last-child) {
+.latest-rovers ul li:not(:last-child) {
   margin-right: 3rem;
 }
 
-.latest-mars-rovers ul {
+.latest-rovers ul {
   display: flex;
   list-style: none;
   justify-content: center;

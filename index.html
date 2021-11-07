@@ -39,8 +39,8 @@
       <div class="container landing-page-heading">
         <h1>Welcome to DataSpace</h1>
         <h3>
-          We provide a collection of information regarding space facts from the
-          NASA API
+          We provide a collection of information regarding space facts from the NASA
+          API
         </h3>
         <a href="#" class="btn">Picture of the Day</a>
       </div>
@@ -53,16 +53,15 @@
         <div class="whats-iss-content">
           <h1 class="whats-iss-heading">What's ISS?</h1>
           <p class="whats-iss-paragraph">
-            ISS (International Space Station) is a large spacecraft in orbit
-            around Earth. It is a home where crews of astronauts and cosmonauts
-            live. The space station is also a unique science laboratory. Several
-            nations worked together to build and use the space station. The
-            space station is made of parts that were assembled in space by
-            astronauts. It orbits Earth at an average altitude of approximately
-            250 miles. It travels at 17,500 mph. This means it orbits Earth
-            every 90 minutes. NASA is using the space station to learn more
-            about living and working in space. These lessons will make it
-            possible to send humans farther into space than ever before.
+            ISS (International Space Station) is a large spacecraft in orbit around
+            Earth. It is a home where crews of astronauts and cosmonauts live. The
+            space station is also a unique science laboratory. Several nations worked
+            together to build and use the space station. The space station is made of
+            parts that were assembled in space by astronauts. It orbits Earth at an
+            average altitude of approximately 250 miles. It travels at 17,500 mph.
+            This means it orbits Earth every 90 minutes. NASA is using the space
+            station to learn more about living and working in space. These lessons
+            will make it possible to send humans farther into space than ever before.
           </p>
         </div>
         <img class="whats-iss-image" src="./images/iss.png" alt="iss-img" />
@@ -79,22 +78,23 @@
         <div class="latest-mars-text">
           <h1>Latest Mars Photos</h1>
           <p>
-            Get the latest Mars images taken by the NASA here. Select which
-            rover latest image that you would like to see (Curiosity, Spirit,
-            Opportunity, or Perseverance)
+            Get the latest Mars images taken by the NASA here. Select which rover's
+            latest image you would like to see (Curiosity, Spirit, Opportunity, or
+            Perseverance)
           </p>
         </div>
         <div class="latest-rovers">
           <ul>
-            <li class="btn-option" data-option="curiosity">Curiosity</li>
-            <li class="btn-option" data-option="spirit">Spirit</li>
-            <li class="btn-option" data-option="opportunity">Opportunity</li>
-            <li class="btn-option" data-option="perseverance">Perseverance</li>
+            <li class="btn-option active" data-options="perseverance">
+              Perseverance
+            </li>
+            <li class="btn-option" data-options="spirit">Spirit</li>
+            <li class="btn-option" data-options="opportunity">Opportunity</li>
+            <li class="btn-option" data-options="curiosity">Curiosity</li>
           </ul>
           <!-- Rover Image here -->
-          <img id="rover-image" src="" alt="" />
-
-          <button class="btn">Show me another</button>
+          <img id="rover-image" class="rover-image" src="" alt="" />
+          <button id="show-another" class="btn">Show me another</button>
         </div>
       </div>
     </section>

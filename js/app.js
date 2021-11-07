@@ -1,15 +1,23 @@
 const apod = document.querySelector('.apod');
 const roversOption = document.querySelectorAll('.latest-rovers ul li');
+const roverImage = document.getElementById('rover-image');
+const showAnotherImage = document.getElementById('show-another');
+console.log(showAnotherImage);
 
 class App {
   #marker;
+  #option;
 
   constructor() {
     this._getAPOD();
     this._loadMap();
     this._getISS();
     setInterval(this._getISS.bind(this), 1000);
+    this._getLatestPhotos();
     this._roversOptionHandler();
+    showAnotherImage.addEventListener('click', () =>
+      this._getLatestPhotos(this.#option)
+    );
   }
 
   async _getAPOD() {
@@ -89,11 +97,29 @@ class App {
         });
 
         rover.classList.add('active');
+        this.#option = rover.getAttribute('data-options');
+        this._getLatestPhotos(this.#option);
       });
     });
   }
 
-  _roversOption() {}
+  _getLatestPhotos = async (option) => {
+    try {
+      const result = await fetch(
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/${
+          option ? option : 'perseverance'
+        }/latest_photos?api_key=ZnfBKm3UIHE7QMuadjbpbXSmghb5PSeYoI3lUEUi`
+      );
+      const { latest_photos } = await result.json();
+      const randomImage =
+        latest_photos[Math.floor(Math.random() * latest_photos.length)];
+
+      const { camera, earth_date, id, img_src, rover, sol } = randomImage;
+      roverImage.src = img_src;
+    } catch (err) {
+      return err;
+    }
+  };
 }
 
 const app = new App();

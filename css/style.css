@@ -44,9 +44,11 @@ p {
   border-radius: 4px;
   color: var(--white);
   padding: 1rem 1.5rem;
+  cursor: pointer;
 }
 
 .btn-option {
+  display: inline-block;
   color: var(--orange);
   border: var(--orange) 1px solid;
   cursor: pointer;
@@ -193,7 +195,7 @@ p {
 }
 
 .latest-rovers * {
-  margin: 0.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .latest-rovers ul li:not(:last-child) {
@@ -204,4 +206,10 @@ p {
   display: flex;
   list-style: none;
   justify-content: center;
+}
+
+.rover-image {
+  max-width: 40%;
+  display: block;
+  margin: 0 auto;
 }

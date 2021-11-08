@@ -64,6 +64,18 @@ p {
   background-color: var(--orange);
 }
 
+.btn-search {
+  display: inline-block;
+  background-color: #5233d1;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--white);
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  transition: 0.3s;
+}
+
 /* Navigation */
 .nav {
   display: flex;
@@ -111,7 +123,7 @@ p {
 }
 
 .landing-page-heading h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #eeeeee;
 }
@@ -182,7 +194,7 @@ p {
 }
 
 #issMap {
-  min-height: 500px;
+  min-height: 700px;
 }
 
 /* Latest Mars Photos */
@@ -217,7 +229,7 @@ p {
 
 /* Footer */
 #footer {
-  background-color: #212030;
+  background-color: #373350;
 }
 
 .footer {
@@ -244,4 +256,23 @@ p {
 
 .footer-links li a {
   color: #e2e2e2;
+}
+
+/* Image Library */
+.search {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.search-form {
+  margin-top: 1.5rem;
+}
+
+.search-input {
+  border: 1px solid rgb(197, 197, 197);
+  font-size: 1rem;
+  min-width: 40%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-right: 5px;
 }

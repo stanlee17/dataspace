@@ -1,7 +1,11 @@
-export default class Search {
+class Search {
+  constructor() {
+    this.getData();
+  }
+
   async getData() {
     try {
-      const result = await fetch(`https://images-api.nasa.gov/search?q=venus`);
+      const result = await fetch(`https://images-api.nasa.gov/search?q=nasa`);
       const data = await result.json();
       console.log(data);
     } catch (err) {
@@ -9,3 +13,5 @@ export default class Search {
     }
   }
 }
+
+const search = new Search();

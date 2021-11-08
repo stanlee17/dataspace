@@ -81,8 +81,8 @@ class App {
 
     const issIcon = L.icon({
       iconUrl: './images/iss200.png',
-      iconSize: [50, 32],
-      iconAnchor: [25, 16],
+      iconSize: [75, 48],
+      iconAnchor: [37.5, 10],
     });
 
     this.#marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);

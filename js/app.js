@@ -2,7 +2,6 @@ const apod = document.querySelector('.apod');
 const roversOption = document.querySelectorAll('.latest-rovers ul li');
 const roverImage = document.getElementById('rover-image');
 const showAnotherImage = document.getElementById('show-another');
-console.log(showAnotherImage);
 
 class App {
   #marker;

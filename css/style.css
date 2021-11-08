@@ -188,6 +188,7 @@ p {
 /* Latest Mars Photos */
 .latest-mars {
   text-align: center;
+  padding: 7rem 0;
 }
 
 .latest-mars-text {
@@ -212,4 +213,35 @@ p {
   max-width: 40%;
   display: block;
   margin: 0 auto;
+}
+
+/* Footer */
+#footer {
+  background-color: #212030;
+}
+
+.footer {
+  display: flex;
+  padding: 5rem 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  padding-top: 1rem;
+  color: #c4c4c4;
+}
+
+.footer-links {
+  display: flex;
+  list-style: none;
+}
+
+.footer-links li:not(:last-of-type) {
+  margin-right: 3rem;
+}
+
+.footer-links li a {
+  color: #e2e2e2;
 }

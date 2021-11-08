@@ -38,6 +38,17 @@ class App {
     }
   }
 
+  _validateYouTubeUrl(url) {
+    if (url) {
+      const regExp =
+        /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+      if (url.match(regExp)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   async _getISS() {
     const res = await fetch(`https://api.wheretheiss.at/v1/satellites/25544`);
     const data = await res.json();
@@ -58,7 +69,15 @@ class App {
     apod.innerHTML = `
     <h1 class="apod-heading">Picture of the Day</h1>
     <div class="apod-wrapper">
+      ${
+        this._validateYouTubeUrl(this.imageUrl)
+          ? `
+      <iframe class="apod-iframe" src="${this.imageUrl}"></iframe>
+      `
+          : `
       <img class="apod-image" src="${this.imageUrl}" alt="${this.title}">
+      `
+      }
       <div class="apod-content">
         <h1 class="apod-title">${this.title}</h1>
         <h3 class="apod-copyright">${

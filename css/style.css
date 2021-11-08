@@ -151,6 +151,12 @@ p {
   min-width: 45%;
 }
 
+.apod-iframe {
+  border: none;
+  min-width: 45%;
+  min-height: 450px;
+}
+
 .apod-content {
   padding-left: 3rem;
 }

@@ -81,10 +81,30 @@ p {
   margin-bottom: 1rem;
 }
 
+@media (max-width: 1000px) {
+  p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .btn-option {
+    font-size: 1.2rem;
+  }
+
+  #error {
+    font-size: 1.4rem;
+  }
+}
+
 /* Navigation */
 .nav {
   display: flex;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -99,11 +119,30 @@ p {
 }
 
 .nav-links li:not(:last-child) {
-  margin-right: 3rem;
+  margin-right: 2rem;
 }
 
 .nav-links li {
   list-style: none;
+}
+
+@media (max-width: 1000px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    font-size: 1.3rem;
+  }
+
+  .nav-links li {
+    margin-top: 1.5rem;
+  }
+
+  .nav-links li:not(:last-child) {
+    margin-right: 0;
+  }
 }
 
 /* Landing Page */
@@ -135,6 +174,16 @@ p {
 
 .landing-page-heading *:not(:last-child) {
   padding-bottom: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+  .landing-page-heading h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing-page-heading h3 {
+    font-size: 1.3rem;
+  }
 }
 
 /* APOD */
@@ -178,6 +227,22 @@ p {
   line-height: 2;
 }
 
+@media (max-width: 1000px) {
+  .apod-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .apod-image {
+    max-width: 100%;
+  }
+
+  .apod-content {
+    padding-top: 3rem;
+    padding-left: 0;
+  }
+}
+
 /* What's ISS */
 .whats-iss {
   display: flex;
@@ -192,6 +257,22 @@ p {
 
 .whats-iss-image {
   min-width: 45%;
+}
+
+@media (max-width: 1000px) {
+  .whats-iss {
+    flex-direction: column;
+  }
+
+  .whats-iss-content {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .whats-iss-image {
+    max-width: 100%;
+  }
 }
 
 /* Realtime ISS Location */
@@ -219,7 +300,7 @@ p {
 }
 
 .latest-rovers * {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .latest-rovers ul li:not(:last-child) {
@@ -238,6 +319,19 @@ p {
   margin: 0 auto;
 }
 
+@media (max-width: 1000px) {
+  .latest-rovers ul {
+    flex-direction: column;
+  }
+
+  .latest-rovers ul li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .rover-image {
+    min-width: 100%;
+  }
+}
 /* Footer */
 #footer {
   background-color: #2b303f;
@@ -273,6 +367,24 @@ p {
   color: #e2e2e2;
 }
 
+@media (max-width: 1000px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    flex-direction: column;
+  }
+
+  .footer-links li:not(:last-of-type) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
 /* Image Library */
 .search {
   padding: 5rem 0;
@@ -301,7 +413,7 @@ p {
 }
 
 .searched {
-  margin: 2rem 0;
+  margin: 3rem 0;
   display: flex;
   line-height: 2;
   align-items: center;
@@ -313,4 +425,31 @@ p {
 
 .searched-content {
   padding-left: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .search-input {
+    min-width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .btn-search {
+    display: none;
+  }
+
+  .search-results {
+    font-size: 1.4rem;
+  }
+
+  .searched {
+    flex-direction: column;
+  }
+
+  .searched-content {
+    padding-left: 0;
+  }
+
+  .searched-image {
+    max-width: 100%;
+  }
 }

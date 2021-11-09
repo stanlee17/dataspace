@@ -1,0 +1,22 @@
+{
+  "name": "dataspace",
+  "version": "1.0.0",
+  "description": "dataspace nasa api app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanlee17/dataspace.git"
+  },
+  "author": "Yves Koesumo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanlee17/dataspace/issues"
+  },
+  "homepage": "https://github.com/stanlee17/dataspace#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}

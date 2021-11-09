@@ -1,9 +1,8 @@
-const api_key = 'ZnfBKm3UIHE7QMuadjbpbXSmghb5PSeYoI3lUEUi';
-
 const apod = document.querySelector('.apod');
 const roversOption = document.querySelectorAll('.latest-rovers ul li');
 const roverImage = document.getElementById('rover-image');
 const showAnotherImage = document.getElementById('show-another');
+const api_key = config.API_KEY;
 
 class App {
   #marker;

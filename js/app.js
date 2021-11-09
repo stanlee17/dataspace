@@ -1,3 +1,5 @@
+const api_key = 'ZnfBKm3UIHE7QMuadjbpbXSmghb5PSeYoI3lUEUi';
+
 const apod = document.querySelector('.apod');
 const roversOption = document.querySelectorAll('.latest-rovers ul li');
 const roverImage = document.getElementById('rover-image');
@@ -22,7 +24,7 @@ class App {
   async _getAPOD() {
     try {
       const result = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=ZnfBKm3UIHE7QMuadjbpbXSmghb5PSeYoI3lUEUi`
+        `https://api.nasa.gov/planetary/apod?api_key=${api_key}`
       );
       const data = await result.json();
 
@@ -52,15 +54,18 @@ class App {
   async _getISS() {
     const res = await fetch(`https://api.wheretheiss.at/v1/satellites/25544`);
     const data = await res.json();
-    const { latitude, longitude, velocity } = data;
 
-    this.#marker.setLatLng([latitude, longitude]);
+    this.latitude = data.latitude;
+    this.longitude = data.longitude;
+    this.velocity = data.velocity;
+
+    this.#marker.setLatLng([this.latitude, this.longitude]);
 
     this.#marker
       .bindPopup(
-        `Latitude: ${latitude} <br /> Longitude: ${longitude} <br /> Velocity: ${Math.round(
-          velocity
-        )} km`
+        `Latitude: ${this.latitude} <br /> Longitude: ${
+          this.longitude
+        } <br /> Velocity: ${Math.round(this.velocity)} km`
       )
       .openPopup();
   }
@@ -126,14 +131,15 @@ class App {
       const result = await fetch(
         `https://api.nasa.gov/mars-photos/api/v1/rovers/${
           option ? option : 'perseverance'
-        }/latest_photos?api_key=ZnfBKm3UIHE7QMuadjbpbXSmghb5PSeYoI3lUEUi`
+        }/latest_photos?api_key=${api_key}`
       );
       const { latest_photos } = await result.json();
       const randomImage =
         latest_photos[Math.floor(Math.random() * latest_photos.length)];
 
-      const { camera, earth_date, id, img_src, rover, sol } = randomImage;
-      roverImage.src = img_src;
+      this.img_src = randomImage.img_src;
+
+      roverImage.src = this.img_src;
     } catch (err) {
       return err;
     }

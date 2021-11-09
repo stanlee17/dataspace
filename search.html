@@ -39,11 +39,16 @@
     </nav>
     <div id="search">
       <div class="container search">
-        <h1>Image Library</h1>
-        <form class="search-form">
-          <input type="text" class="search-input" placeholder="e.g. Mars" />
-          <button type="submit" class="btn-search">Search</button>
-        </form>
+        <div class="image-library">
+          <h1>Image Library</h1>
+          <form class="search-form">
+            <div id="error"></div>
+            <input type="text" class="search-input" placeholder="e.g. Mars" />
+            <button type="submit" class="btn-search">Search</button>
+          </form>
+        </div>
+        <p id="search-results" class="search-results"></p>
+        <div class="row" id="content"></div>
       </div>
     </div>
     <script src="./js/search.js"></script>
